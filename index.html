@@ -6,7 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
-  <title>Um jovem adolescente fzd merda...</title>
+  <title>Venha comprar na loja do "Faz o L", a picanha tá 200 R$ em promoção aq</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -72,7 +72,7 @@
         }
 
         & .Preco{
-          color:  orangered;
+          color:  green;
           font-family: Arial, Helvetica, sans-serif;
           cursor: pointer;
           
@@ -109,8 +109,7 @@
         align-items: center;
         justify-content: space-around;
         margin-bottom: 30px;
-        width: 90%;
-        height: 400px;
+        width: 100%;
         border-radius: 20px;
         background-color: #f0f0f0b6;
 
@@ -131,16 +130,73 @@
         }
       }
 
-      @media screen and (min-width: 992) and (max-width: 1440px) {
+      .carrinho{
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      @media screen and (min-width: 1024px){
+
+        .container{
+          width: 100%;
+          height: 100%;
+          display: grid;
+          grid-template-columns: 1fr 400px;
+          
+        }
+
+        .Grids{
+          
+        }
+
+        .wrap{
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+        }
+
           .Waffle-Section, .Vanilla-Section, .Macaron-Section, .Tiramisu-Section, .Pistachio-Section, .Lemon-Section, .Red-Section, .Brownie-Section, .Panna-Section{
             height: 300px;
             width: 300px;
+            margin-bottom: 50px;
+
+          & .Img{
+            width: 300px;
+          }
+
+
+          & #add1, #add2, #add3, #add4, #add5, #add6, #add7, #add8, #add9{
+            background-color: white;
+            position: relative;
+            right: 50px;
+            padding: 10px;
+
+            &:hover{
+              background-color: #64413765;
+              color: white;
+            }
+          }
+          }
+
+          .carrinho{
+            display: flex;
+            padding: 20px 20px;
+            align-items: stretch;
+            justify-content: center;
+          }
+
+          abbr{
+            text-decoration: none;
           }
       }
   </style>
 </head>
 <body>
 <div class="container">
+<section class="Grids">
+<div class="wrap">
   
     <h1>Desserts</h1>
   
@@ -150,7 +206,7 @@
       <span id="add1"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Waffle</span>
       <span class="name">Waffle with Berries</span>
-      <span class="Preco">$6.50</span>
+      <span class="Preco"><abbr title="Tá duro dorme">$ 6.50</abbr></span>
   </section>
   
   <section class="Vanilla-Section">
@@ -158,7 +214,7 @@
       <span id="add2"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Crème Brûlée</span>
       <span class="name">Vanilla Bean</span>
-      <span class="Preco">$7.00</span>
+      <span class="Preco"><abbr title="Compra pfvr cara...">$ 7.00</abbr></span>
   </section>
   
   <section class="Macaron-Section">
@@ -166,7 +222,7 @@
       <span id="add3"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Macaron</span>
       <span class="name">Macaron Mix of Five</span>
-      <span class="Preco">$8.00</span>
+      <span class="Preco"><abbr title="Tá facil pra ngm, taxaram até essa lojinha...">$ 8.00</abbr></span>
   </section>
   
   <section class="Tiramisu-Section">
@@ -174,7 +230,7 @@
       <span id="add4"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Tiramisu</span>
       <span class="name">Classic Tiramisu</span>
-      <span class="Preco">$5.50</span>
+      <span class="Preco"><abbr title="">$ 5.50</abbr></span>
   </section>
   
   <section class="Pistachio-Section">
@@ -182,15 +238,15 @@
       <span id="add5"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Baklava</span>
       <span class="name">Pistachio Baklava</span>
-      <span class="Preco">$4.00</span>
+      <span class="Preco"><abbr title="Foda-se o povo de java script e de python">$ 4.00</abbr></span>
   </section>
   
   <section class="Lemon-Section">
       <img src="images/image-meringue-mobile.jpg" alt="" class="Img">
-      <span id="add6"><img src="images/icon-add-to-cart.svg" alt="">Add to Cart</span>
+      <span id="add6"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Pie</span>
       <span class="name">Lemon Meringue Pie</span>
-      <span class="Preco">$5.00</span>
+      <span class="Preco">$ 5.00</span>
   </section>
   
   <section class="Red-Section">
@@ -198,7 +254,7 @@
       <span id="add7"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Cake</span>
       <span class="name">Red Velvet Cake</span>
-      <span class="Preco">$4.50</span>
+      <span class="Preco">$ 4.50</span>
   </section>
   
   <section class="Brownie-Section">
@@ -206,7 +262,7 @@
       <span id="add8"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Brownie</span>
       <span class="name">Salted Caramel Brownie</span>
-      <span class="Preco">$4.50</span>
+      <span class="Preco">$ 4.50</span>
   </section>
   
   <section class="Panna-Section">
@@ -214,19 +270,23 @@
       <span id="add9"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Panna Cotta</span>
       <span class="name">Vanilla Panna Cotta</span>
-      <span class="Preco">$6.50</span>
+      <span class="Preco">$ 6.50</span>
   </section>
-
-
- <section class="Your-Cart">
-   
-    <h1>Your Cart (0)</h1>
-
-    <img src="images/illustration-empty-cart.svg" alt="">
-
-
-    <h2>Nenhum item adicionado...</h2>
-
+  </section>
+  
+  <section class="carrinho">
+  
+   <section class="Your-Cart">
+  
+      <h1>Your Cart (0)</h1>
+  
+      <img src="images/illustration-empty-cart.svg" alt="">
+  
+  
+      <h2>Nenhum item adicionado...</h2>
+  
+  </section>
+</div>
 </section>
     <!--
     <div class="attribution">
