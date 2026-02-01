@@ -29,7 +29,6 @@
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      background-color: #7fffd400;
 
       & h1{
         display: flex;
@@ -173,18 +172,26 @@
             right: 50px;
             padding: 10px;
 
-            &:hover{
-              background-color: #64413765;
-              color: white;
-            }
+            
           }
           }
 
           .carrinho{
-            display: flex;
+            transition: 1s ease;
             padding: 20px 20px;
-            align-items: stretch;
+            position: relative;
+            display: flex;
+            align-items: flex-start;
             justify-content: center;
+
+            & .Your-Cart{
+              position: sticky;
+              top:  0px;
+              left:  0px;
+              justify-content: space-evenly;
+              height: 60%;
+              cursor: col-resize;
+            }
           }
 
           abbr{
@@ -203,7 +210,7 @@
   <section class="Waffle-Section">
   
       <img src="images/image-waffle-mobile.jpg" alt="" class="Img">
-      <span id="add1"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+      <span class="add" id="add1"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Waffle</span>
       <span class="name">Waffle with Berries</span>
       <span class="Preco">$ 6.50</span>
@@ -211,15 +218,15 @@
   
   <section class="Vanilla-Section">
       <img src="images/image-creme-brulee-mobile.jpg" alt="" class="Img">
-      <span id="add2"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+      <span class="add" id="add2"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Crème Brûlée</span>
       <span class="name">Vanilla Bean</span>
-      <span class="Preco"$ 7.00</span>
+      <span class="Preco">$ 7.00</span>
   </section>
   
   <section class="Macaron-Section">
       <img src="images/image-macaron-mobile.jpg" alt="" class="Img">
-      <span id="add3"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+      <span class="add" id="add3"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Macaron</span>
       <span class="name">Macaron Mix of Five</span>
       <span class="Preco">$ 8.00</span>
@@ -227,7 +234,7 @@
   
   <section class="Tiramisu-Section">
       <img src="images/image-tiramisu-mobile.jpg" alt="" class="Img">
-      <span id="add4"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+      <span class="add" id="add4"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Tiramisu</span>
       <span class="name">Classic Tiramisu</span>
       <span class="Preco">$ 5.50</span>
@@ -235,7 +242,7 @@
   
   <section class="Pistachio-Section">
       <img src="images/image-baklava-mobile.jpg" alt="" class="Img">
-      <span id="add5"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+      <span class="add" id="add5"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Baklava</span>
       <span class="name">Pistachio Baklava</span>
       <span class="Preco">$ 4.00</span>
@@ -243,7 +250,7 @@
   
   <section class="Lemon-Section">
       <img src="images/image-meringue-mobile.jpg" alt="" class="Img">
-      <span id="add6"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+      <span class="add" id="add6"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Pie</span>
       <span class="name">Lemon Meringue Pie</span>
       <span class="Preco">$ 5.00</span>
@@ -251,7 +258,7 @@
   
   <section class="Red-Section">
       <img src="images/image-cake-mobile.jpg" alt="" class="Img">
-      <span id="add7"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+      <span class="add" id="add7"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Cake</span>
       <span class="name">Red Velvet Cake</span>
       <span class="Preco">$ 4.50</span>
@@ -259,7 +266,7 @@
   
   <section class="Brownie-Section">
       <img src="images/image-brownie-mobile.jpg" alt="" class="Img">
-      <span id="add8"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+      <span class="add" id="add8"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Brownie</span>
       <span class="name">Salted Caramel Brownie</span>
       <span class="Preco">$ 4.50</span>
@@ -267,7 +274,7 @@
   
   <section class="Panna-Section">
       <img src="images/image-panna-cotta-mobile.jpg" alt="" class="Img">
-      <span id="add9"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+      <span class="add" id="add9"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
       <span class="nameGray">Panna Cotta</span>
       <span class="name">Vanilla Panna Cotta</span>
       <span class="Preco">$ 6.50</span>
@@ -275,16 +282,19 @@
   </section>
   
   <section class="carrinho">
+    
   
    <section class="Your-Cart">
   
-      <h1>Your Cart (0)</h1>
-  
-      <img src="images/illustration-empty-cart.svg" alt="">
-  
-  
-      <h2>Nenhum item adicionado...</h2>
-  
+    <ul class="list">
+
+    </ul>
+    <div class="Cart">
+      
+        <h1>Seu carrinho (0)</h1>
+        <img src="images/illustration-empty-cart.svg" alt="">
+        <h2>Nenhum item adicionado...</h2>
+    </div>
   </section>
 </div>
 </section>
