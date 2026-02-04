@@ -8,12 +8,16 @@
   
   <title>Venha comprar na loja do "Faz o L", a picanha tá 200 R$ em promoção aq</title>
 
+  <script src="https://kit.fontawesome.com/170c208023.js" crossorigin="anonymous"></script>
+  
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
 
-
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    
     *{
       padding: 0px;
       margin: 0px;
@@ -71,7 +75,7 @@
         }
 
         & .Preco{
-          color:  green;
+          color:  orangered;
           font-family: Arial, Helvetica, sans-serif;
           cursor: pointer;
           
@@ -79,11 +83,11 @@
 
       }
 
-      #add1, #add2, #add3, #add4, #add5, #add6, #add7, #add8, #add9{
+      .add {
         position: relative;
         bottom: 20px;
         right: 40px;
-        display: flex;
+        display: none;
         justify-content: center;
         margin-left: 150px;
         background-color: #ffffffb2;
@@ -103,22 +107,57 @@
         }
 
       .Your-Cart{
+        width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: flex-start;
         margin-bottom: 30px;
 
+        & li{
+          border-bottom:  1px solid black;
+          padding: 10px;
+          display: flex;
+          justify-content: space-around;
+          flex-flow:  column wrap;
+          border-bottom:  2px solid #63636356;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          width: 100%;
+          margin-bottom: 10px;
+          list-style: none;
+          font-size: 1.2em;
+          color: #461818;
+
+          & strong{
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-between;
+
+            & i{
+              color:  red;
+              text-shadow: 2px 2px 2px #68686881;
+              padding: 5px;
+              cursor: pointer;
+            }
+          }
+        }
+
+
         & h1{
+          display: none;
           font-size: 1.7em;
           color: #c74a1c;
         }
 
         & img{
+          display: none;
           width: 200px;
         }
 
         & h2{
+          display: none;
           font-size: 1.3em;
           font-family: Arial, Helvetica, sans-serif;
           color:  #685252e0;
@@ -128,12 +167,20 @@
 
       .carrinho{
         display: flex;
+        flex-flow: row wrap;
         justify-content: flex-start;
-        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 20px;
         margin-top: 30px;
-        margin-bottom: 30px;
         background-color: #f0f0f0b6;
         width: 100%;
+      }
+
+      ul{
+        padding: 10px;
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
       }
 
       @media screen and (min-width: 1024px){
@@ -162,7 +209,7 @@
           }
 
 
-          & #add1, #add2, #add3, #add4, #add5, #add6, #add7, #add8, #add9{
+          & .add{
             background-color: white;
             position: relative;
             right: 50px;
@@ -173,25 +220,21 @@
           }
 
           .carrinho{
-            flex-direction: column;
-            cursor: e-resize;
-            margin-top: 30px;
-            margin-bottom: 30px;
+            height: 85%;
+            flex-flow: column;
             border-radius: 20px;
             background-color: #f0f0f0b6;
             transition: 1s ease;
-            padding: 20px 20px;
             position: relative;
             display: flex;
             align-items: flex-start;
-            justify-content: center;
+            justify-content: flex-start;
 
             & .Your-Cart{
               position: sticky;
               top:  0px;
               left:  0px;
               justify-content: flex-start;
-              height: 60%;
               cursor: col-resize;
             }
           }
@@ -209,78 +252,183 @@
   
     <h1>Desserts</h1>
   
-  <section class="Waffle-Section">
+  <section class="Waffle-Section" >
   
       <img src="images/image-waffle-mobile.jpg" alt="" class="Img">
-      <span class="add" id="add1"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+
+      <span class="add" data-nome="Waffle with Berries" data-preco="6.50">
+        
+      <img src="images/icon-add-to-cart.svg" alt="" data-nome="Waffle with Berries" data-preco="6.50">Adicionar
+    
+    </span>
+
       <span class="nameGray">Waffle</span>
+
       <span class="name">Waffle with Berries</span>
+
       <span class="Preco">$ 6.50</span>
   </section>
   
-  <section class="Vanilla-Section">
+  <section class="Vanilla-Section" >
+
       <img src="images/image-creme-brulee-mobile.jpg" alt="" class="Img">
-      <span class="add" id="add2"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+
+      <span class="add" data-nome="Vanilla Bean Crème Brûlée" data-preco="7.00">
+        
+        <img src="images/icon-add-to-cart.svg" alt="" data-nome="Vanilla Bean Crème Brûlée" data-preco="7.00">
+        
+        Adicionar
+      
+      </span>
+
       <span class="nameGray">Crème Brûlée</span>
+
       <span class="name">Vanilla Bean</span>
+
       <span class="Preco">$ 7.00</span>
+
   </section>
   
-  <section class="Macaron-Section">
+  <section class="Macaron-Section" >
+
       <img src="images/image-macaron-mobile.jpg" alt="" class="Img">
-      <span class="add" id="add3"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+
+      <span class="add" data-nome="Macaron Mix of Five" data-preco="8.00">
+        
+        <img src="images/icon-add-to-cart.svg" alt="" data-nome="Macaron Mix of Five" data-preco="8.00">
+        
+        Adicionar
+      
+      </span>
+
       <span class="nameGray">Macaron</span>
+
       <span class="name">Macaron Mix of Five</span>
+
       <span class="Preco">$ 8.00</span>
+
   </section>
   
-  <section class="Tiramisu-Section">
+  <section class="Tiramisu-Section" >
+
       <img src="images/image-tiramisu-mobile.jpg" alt="" class="Img">
-      <span class="add" id="add4"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+
+      <span class="add" data-nome="Classic Tiramisu" data-preco="5.50">
+        
+        <img src="images/icon-add-to-cart.svg" alt="" data-nome="Classic Tiramisu" data-preco="5.50">
+        
+        Adicionar
+      
+      </span>
+
       <span class="nameGray">Tiramisu</span>
+
       <span class="name">Classic Tiramisu</span>
+
       <span class="Preco">$ 5.50</span>
+
   </section>
   
-  <section class="Pistachio-Section">
+  <section class="Pistachio-Section" >
+
       <img src="images/image-baklava-mobile.jpg" alt="" class="Img">
-      <span class="add" id="add5"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+
+      <span class="add" data-nome="Pistachio Baklava" data-preco="4.00">
+        
+        <img src="images/icon-add-to-cart.svg" alt="" data-nome="Pistachio Baklava" data-preco="4.00">
+        
+        Adicionar
+      
+      </span>
+
       <span class="nameGray">Baklava</span>
+
       <span class="name">Pistachio Baklava</span>
+
       <span class="Preco">$ 4.00</span>
+
   </section>
   
-  <section class="Lemon-Section">
+  <section class="Lemon-Section" >
+
       <img src="images/image-meringue-mobile.jpg" alt="" class="Img">
-      <span class="add" id="add6"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+
+      <span class="add" data-nome="Lemon Meringue Pie" data-preco="5.00">
+        
+        <img src="images/icon-add-to-cart.svg" alt="" data-nome="Lemon Meringue Pie" data-preco="5.00">
+        
+        Adicionar
+      
+      </span>
+
       <span class="nameGray">Pie</span>
+
       <span class="name">Lemon Meringue Pie</span>
+
       <span class="Preco">$ 5.00</span>
+
   </section>
   
-  <section class="Red-Section">
+  <section class="Red-Section" >
+
       <img src="images/image-cake-mobile.jpg" alt="" class="Img">
-      <span class="add" id="add7"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+
+      <span class="add" data-nome="Red Velvet Cake" data-preco="4.50">
+        
+        <img src="images/icon-add-to-cart.svg" alt="" data-nome="Red Velvet Cake" data-preco="4.50">
+        
+        Adicionar
+      
+      </span>
+
       <span class="nameGray">Cake</span>
+
       <span class="name">Red Velvet Cake</span>
+
       <span class="Preco">$ 4.50</span>
+
   </section>
   
-  <section class="Brownie-Section">
+  <section class="Brownie-Section" >
+
       <img src="images/image-brownie-mobile.jpg" alt="" class="Img">
-      <span class="add" id="add8"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+
+      <span class="add" data-nome="Salted Caramel Brownie" data-preco="4.50">
+        
+        <img src="images/icon-add-to-cart.svg" alt="" data-nome="Salted Caramel Brownie" data-preco="4.50">
+        
+        Adicionar
+      
+      </span>
+
       <span class="nameGray">Brownie</span>
+
       <span class="name">Salted Caramel Brownie</span>
+
       <span class="Preco">$ 4.50</span>
+
   </section>
   
-  <section class="Panna-Section">
+  <section class="Panna-Section" >
+
       <img src="images/image-panna-cotta-mobile.jpg" alt="" class="Img">
-      <span class="add" id="add9"><img src="images/icon-add-to-cart.svg" alt="">Adicionar</span>
+
+      <span class="add" data-nome="Vanilla Panna Cotta" data-preco="6.50">
+        
+        <img src="images/icon-add-to-cart.svg" alt="" data-nome="Vanilla Panna Cotta" data-preco="6.50">
+        
+        Adicionar
+      
+      </span>
+
       <span class="nameGray">Panna Cotta</span>
-      <span class="name">Vanilla Panna Cotta</span>
+
+      <span class="name" >Vanilla Panna Cotta</span>
+
       <span class="Preco">$ 6.50</span>
+
   </section>
+
   </section>
   
   <section class="carrinho">
@@ -288,7 +436,7 @@
   
    <section class="Your-Cart">
   
-    <ul class="list">
+    <ul>
 
     </ul>
     <div class="Cart">
@@ -297,6 +445,7 @@
         <img src="images/illustration-empty-cart.svg" alt="">
         <h2>Nenhum item adicionado...</h2>
     </div>
+  </section>
   </section>
 </div>
 </section>
