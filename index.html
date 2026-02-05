@@ -87,10 +87,10 @@
         position: relative;
         bottom: 20px;
         right: 40px;
-        display: none;
+        display: flex;
         justify-content: center;
         margin-left: 150px;
-        background-color: #ffffffb2;
+        background-color: #ffffff;
         color: #920b0b;
         cursor: pointer;
         font-family: Arial, Helvetica, sans-serif;
@@ -101,7 +101,6 @@
 
         &:hover{
           transition: .5s ease;
-          background-color: #e7d5d5be;
           border: 1px solid #a5350c;
         }
         }
@@ -174,6 +173,32 @@
         margin-top: 30px;
         background-color: #f0f0f0b6;
         width: 100%;
+
+        & .Seção-Terminar{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+        }
+
+        & #terminar{
+          font-size: 1.3em;
+          font-family: Arial, Helvetica, sans-serif;
+          width: 60%;
+          cursor: pointer;
+          border-radius: 40px;
+          border: 0px;
+          background-color: orangered;
+          color: white;
+          margin-bottom: 20px;
+          text-shadow: 1px 1px 1px #5a5858;
+          padding: 15px;
+
+          span.Msg{
+            border: 1px solid black;
+          }
+        }
       }
 
       ul{
@@ -446,6 +471,11 @@
         <h2>Nenhum item adicionado...</h2>
     </div>
   </section>
+<section class="Seção-Terminar">
+
+
+  <button id="terminar">Confirm Order</button>
+</section>
   </section>
 </div>
 </section>

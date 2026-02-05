@@ -2,7 +2,7 @@ const botaoAdd = document.querySelectorAll('.add');
 const Ul = document.querySelector('ul');
 
 // objeto para guardar os itens
-let items = {};
+let items = [];
 
 botaoAdd.forEach(btn => {
 
